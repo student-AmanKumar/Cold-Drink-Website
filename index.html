@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoolDrink 3D</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/bfc6a1edf2.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<header>
+
+<a href="#about" style="text-decoration: none;"><div class="logo">Cool<span style="color:orange">Drink</span></div></a>
+
+<nav>
+<a href="#home">Ho<span>me</span></a>
+<a href="#about">Abo<span>ut</span></a>
+<a href="#drinks">Dri<span>nks</span></a>
+<a href="#contact">Con<span>tact</span></a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<div class="text hidden">
+<h1>Ice Cold <span>Energy Drink</span></h1>
+<p>Unleash the power of mango with CoolDrink Maaza – ice cold energy that refreshes your soul.</p>
+
+<button class="btn">Order Now</button>
+</div>
+
+<img src="/images/home.jpeg" class="bottle">
+
+</section>
+
+<!-- about section -->
+ <section class="about" id="about">
+
+<div class="about-container">
+
+<div class="about-img hidden">
+<img src="/images/about.jpeg">
+</div>
+
+<div class="about-text hidden">
+
+<h2>About <span>CoolDrink</span></h2>
+
+<p>
+CoolDrink brings the most refreshing beverages with premium taste and ultra cool experience. 
+Our drinks are crafted with the finest ingredients to give you the perfect chill in every sip.
+</p>
+
+<p>
+With modern flavors, stylish packaging, and refreshing energy, CoolDrink is the perfect choice 
+for every moment — parties, summer days, or just relaxing.
+</p>
+
+<button class="btn"><a href="#drinks" style="text-decoration: none;color:black">Explore Drinks</a></button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- product section  -->
+<section class="products" id="drinks">
+
+<h2 class="hidden" >Our <span style="color:orange">Drinks</span></h2>
+
+<div class="cards" >
+
+<div class="card hidden">
+<img src="/images/bottle1.jpeg">
+<h3>Coca Cola</h3>
+</div>
+
+<div class="card hidden">
+<img src="/images/bottle2.jpeg">
+<h3>Orange </h3>
+</div>
+
+<div class="card hidden">
+<img src="/images/bottle3.jpeg">
+<h3>Sprite </h3>
+</div>
+<!-- add more -->
+ 
+<div class="card hidden">
+<img src="/images/bottle4.jpeg">
+<h3>Fanta</h3>
+</div>
+
+
+</div>
+
+</section>
+<!-- contact section  -->
+ <section class="contact" id="contact">
+
+<h2 class="hidden">Contact <span>Us</span></h2>
+
+<div class="contact-container">
+
+<div class="contact-info hidden">
+
+<h3>Get In Touch</h3>
+
+<p>Have questions or want to order refreshing drinks?  
+Reach out to us anytime!</p>
+
+<p>📍 Location: India</p>
+<p>📞 Phone: +91 1234567890</p>
+<p>📧 Email: cooldrink@email.com</p>
+
+</div>
+
+<form class="contact-form hidden">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Your Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p style="font-size: 20px;">© 2026 CoolDrink. All Rights Reserved</p>
+<div class="icons" style="color:orange;font-size: 24px;cursor: pointer;">
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-youtube"></i>
+</div>
+
+
+</footer>
+
+
+<script>
+
+/* 3D mouse effect */
+
+const bottle=document.querySelector(".bottle")
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=(window.innerWidth/2 - e.pageX)/30
+let y=(window.innerHeight/2 - e.pageY)/30
+
+bottle.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`
+
+})
+
+
+/* scroll animation */
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+
+})
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el)
+})
+
+</script>
+
+</body>
+</html>
