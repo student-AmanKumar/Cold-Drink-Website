@@ -262,6 +262,9 @@ line-height:1.6;
 flex-direction:column;
 text-align:center;
 }
+.card #fanta{
+    display: none;
+}
 
 .about-img img{
 width:250px;
